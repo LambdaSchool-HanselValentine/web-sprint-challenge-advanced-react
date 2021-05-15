@@ -22,8 +22,6 @@ export default class PlantList extends Component {
 		});
 	}
 
-	// this.componentDidMount
-
 	render() {
 		return (
 			<main className="plant-list">
