@@ -10,18 +10,17 @@ const initialValue = {
 	zip: "",
 };
 
-// This form should be handled by a "useForm" custom hook
-// Build out the logic needed for a form custom hook (see the useForm.js file)
-// and replace the necessary stateful logic from CheckoutForm with the hook
-
 const CheckoutForm = (props) => {
 	const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-	// const [values, setValues] = useState(initialValue);
 
+	// The callback parameter is what the submit button on this specific form does.
+	// I used a callback since every form might have a different submit function.
+	// This callback can also be written separately as a variable.
 	const [values, handleChanges, handleSubmit] = useForm(initialValue, () => {
 		setShowSuccessMessage(true);
 	});
 
+	// // These handlers have been incorporated in the useForm Hooks
 	// const handleChanges = (e) => {
 	// 	setValues({ ...values, [e.target.name]: e.target.value });
 	// };

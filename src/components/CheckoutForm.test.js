@@ -29,7 +29,9 @@ test("form shows success message on submit with form details", () => {
 	userEvent.type(city, "Scranton");
 	userEvent.type(state, "PA");
 	userEvent.type(zip, "1725");
+
 	userEvent.click(submit);
+	// successMessage only shows after user clicks submit
 	const successMessage = screen.getByTestId("successMessage");
 
 	expect(successMessage).toBeInTheDocument();
